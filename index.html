@@ -15,6 +15,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 <scripts> for JavaScript files to build interactions.
 -->
 <head>
+  <title>Clara's Resumé</title>
+
   <link href="css/style.css" rel="stylesheet" type="text/css"></link>
 
   <!--
@@ -39,14 +41,12 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-  <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+ <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body unresolved>
   <div id="main">
-  Hello world!   <!-- You'll be deleting this line in the course -->
-
     <!--
     Everything from here to the <script> tag below is the skeleton of your
     website. Your code will add information to each of the sections of the
@@ -65,6 +65,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
     <div id="education" class='gray'>
       <h2>Education</h2>
+    </div>
+        <div id="online" class='gray'>
     </div>
     <div id="skillsChart">
       <h2>Skills Chart</h2>
@@ -111,28 +113,32 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
   if(document.getElementsByClassName("flex-item").length === 0) {
-    document.getElementById("topContacts").style.display = "none";
+      document.getElementById("topContacts").style.display = "none";
   }
   if(document.getElementsByTagName("h1").length === 0) {
-    document.getElementById("header").style.display = "none";
+      document.getElementById("header").style.display = "none";
   }
   if(document.getElementsByClassName("work-entry").length === 0) {
-    document.getElementById("workExperience").style.display = "none";
+      document.getElementById("workExperience").style.display = "none";
   }
   if(document.getElementsByClassName("project-entry").length === 0) {
-    document.getElementById("projects").style.display = "none";
+      document.getElementById("projects").style.display = "none";
   }
   if(document.getElementsByClassName("education-entry").length === 0) {
-    document.getElementById("education").style.display = "none";
+      document.getElementById("education").style.display = "none";
+  }
+  if (document.getElementsByClassName("online-entry").length === 0) {
+      document.getElementById("online").style.display = "none";
   }
   if(document.getElementsByClassName("skills-entry").length === 0) {
-    document.getElementById("skillsChart").style.display = "none";
+ //     document.getElementById("skillsChart").style.backgroundColor = "black";
+      document.getElementById("skillsChart").style.display = "none";
   }
   if(document.getElementsByClassName("flex-item").length === 0) {
-    document.getElementById("letsConnect").style.display = "none";
+      document.getElementById("letsConnect").style.display = "none";
   }
   if(document.getElementById("map") == undefined) {
-    document.getElementById("mapDiv").style.display = "none";
+      document.getElementById("mapDiv").style.display = "none";
   }
   </script>
 </body>

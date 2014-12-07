@@ -19,11 +19,11 @@ var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%conta
 var HTMLmobile = "<li class='flex-item'><span class='orange-text'>mobile</span><span class='white-text'>%data%</span></li>";
 var HTMLemail = "<li class='flex-item'><span class='orange-text'>email</span><span class='white-text'>%data%</span></li>";
 var HTMLtwitter = "<li class='flex-item'><span class='orange-text'>twitter</span><span class='white-text'>%data%</span></li>";
-var HTMLgithub = "<li class='flex-item'><span class='orange-text'>github</span><span class='white-text'>%data%</span></li>";
+var HTMLgithub = "<li class='flex-item'><a href='#'><span class='orange-text'>github</span><span class='white-text'>%data%</span></a></li>";
 var HTMLblog = "<li class='flex-item'><span class='orange-text'>blog</span><span class='white-text'>%data%</span></li>";
 var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</span><span class='white-text'>%data%</span></li>";
 
-var HTMLbioPic = "<img src='%data%' class='biopic'>";
+var HTMLbioPic = "<a href='#'><img src='%data%' class='biopic'></a>";
 var HTMLWelcomeMsg = "<span class='welcome-message'>%data%</span>";
 
 var HTMLskillsStart = "<h3 id='skillsH3'>Skills at a Glance:</h3><ul id='skills' class='flex-box'></ul>";
@@ -130,9 +130,10 @@ function initializeMap() {
     
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in education.schools) {
+ /*   for (var school in education.schools) {
       locations.push(education.schools[school].location);
     }
+    */
 
     // iterates through work locations and appends each location to
     // the locations array
@@ -172,7 +173,9 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+        // your code goes here!
+        infowindow.open(map, marker);
+    
     });
 
     // this is where the pin actually gets added to the map.
@@ -235,11 +238,11 @@ Uncomment all the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window 
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+map.fitBounds(mapBounds);
+});
